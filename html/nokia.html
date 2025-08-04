@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Probador HTML estilo VS Code</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Consolas, monospace;
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #9cdcfe;
+    }
+
+    textarea {
+      width: 90%;
+      height: 300px;
+      background-color: #252526;
+      color: #d4d4d4;
+      border: none;
+      padding: 10px;
+      resize: vertical;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #0e639c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 90%;
+      height: 400px;
+      border: 1px solid #333;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Probador HTML estilo Visual Studio</h1>
+  <textarea id="codeEditor" placeholder="Escribe aquí tu código HTML...">&lt;h1&gt;Hola usuario!&lt;/h1&gt;</textarea>
+  <button onclick="runHTML()">Ejecutar</button>
+  <iframe id="preview"></iframe>
+
+  <script>
+    function runHTML() {
+      const code = document.getElementById("codeEditor").value;
+      const previewFrame = document.getElementById("preview");
+      previewFrame.srcdoc = code;
+    }
+  </script>
+</body>
+</html>
